@@ -1,0 +1,46 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.vote-tile-list p{
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.vote-tile{
+  border: 1px solid black;
+  width: 75%;
+  margin: auto;
+  text-align: center;
+}
+
+.vote-tile span{
+  color: green;
+}
+
+.vote-count{
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 10px;
+  float: left;
+}

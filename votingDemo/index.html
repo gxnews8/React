@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="utf-8">
+   <title> React Workshop</title>
+   <script src="node_modules/react/dist/react.js"></script>
+   <script src="node_modules/react-dom/dist/react-dom.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+ </head>
+ <body>
+   <div id = "app"></div>
+     <script type ="text/babel">
+        const tileDesriptions = [
+            { id: 1, color: 'blue', background: 'darkBlue'}, 
+            { id: 2, color: 'brown', background: 'pink'},
+            { id: 3, color: 'aquamarine', background: 'yellow'},
+            { id: 4, color: 'red', background: 'green'}
+        ]
+
+        const App = (props) => {
+            const tiles = props.tiles.map(({color, background, id}) => {
+                return (
+                    <Tile key={id} color={color} background={background}/>
+                )
+            })
+            return <div>{tiles}</div>
+        }
+
+        const Tile = (props) => {
+            const textColor = props.color;
+            const backgroundColor = props.background;
+            const style = {
+                height: 150,
+                width: 150,
+                display: 'inline-block',
+                backgroundColor,
+                color: textColor
+            }
+            return (
+                <div style={style}>
+                    {`${textColor} on ${backgroundColor}`}
+                </div>
+            ) 
+        } 
+       
+        ReactDOM.render( <App tiles={tileDesriptions } />, document.getElementById("app"));
+     </script>
+   
+ </body>
+</html>

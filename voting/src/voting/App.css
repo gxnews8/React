@@ -1,0 +1,35 @@
+* {
+    font-family: monospace;
+}
+
+.vote-count {
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 10px 20px;
+    float: left;
+}
+
+.vote-count, .library-name {
+    display: inline-block;
+    margin: 0 10px;
+}
+.library-name{
+  width: 80%
+}
+.vote-tile {
+    border: 1px solid black;
+    width: 75%;
+    margin: 10px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.vote-button {
+    padding: 0px 10px;
+    color: green;
+    font-size: 2em;
+    border: 1px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+}
