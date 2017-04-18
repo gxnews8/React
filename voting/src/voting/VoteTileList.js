@@ -4,19 +4,51 @@ import VoteTile from './VoteTile';
 class VoteTileList extends Component {
     state = {
         libraries: [
-            { votes: 12, libName: 'Vue' },
-            { votes: 15, libName: 'React' },
-            { votes: 4, libName: 'Ember' },
-            { votes: 9, libName: 'Angular' },
+            { votes: 50, libName: 'Vue' },
+            { votes: 50, libName: 'React' },
+            { votes: 50, libName: 'Ember' },
+            { votes: 50, libName: 'Angular' },
+            { votes: 50, libName: 'Javascript' },
+            { votes: 50, libName: 'Jquery' },
+            { votes: 50, libName: 'A-Frame' },
+            { votes: 50, libName: 'P5JS' },
         ]
     }
     incrementVote = (library) => {
         const newLibraries = this.state.libraries.map((libObj, index) => {
             if ( libObj.libName === library ) {
-                return {
+                if ( libObj.votes > 99 ) {
+                    return {
+                    ...libObj,
+                    votes: 100
+                    }
+                } else {
+                    return {
                     ...libObj,
                     votes: libObj.votes + 1
+                    }
                 }
+            }
+            return libObj;
+        });
+        this.setState({
+            libraries: newLibraries
+        });
+    }
+    decrementVote = (library) => {
+        const newLibraries = this.state.libraries.map((libObj, index) => {
+            if ( libObj.libName === library ) {
+                if ( libObj.votes < 1 ) {
+                    return {
+                    ...libObj,
+                    votes: 0
+                    }
+                } else {
+                    return {
+                    ...libObj,
+                    votes: libObj.votes - 1
+                    }
+                }  
             }
             return libObj;
         });
@@ -39,7 +71,8 @@ class VoteTileList extends Component {
                                     key={libObj.libName}
                                     votes={libObj.votes}
                                     libraryName={libObj.libName}
-                                    onClick={ this.incrementVote }/>
+                                    inc={ this.incrementVote }
+                                    dec={ this.decrementVote }/>
                     });
 
         return (
