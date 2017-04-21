@@ -8,10 +8,11 @@ class VoteTileList extends Component {
             { votes: 50, libName: 'React' },
             { votes: 50, libName: 'Ember' },
             { votes: 50, libName: 'Angular' },
-            { votes: 50, libName: 'Javascript' },
+            { votes: 50, libName: 'Typescript' },
             { votes: 50, libName: 'Jquery' },
             { votes: 50, libName: 'A-Frame' },
             { votes: 50, libName: 'P5JS' },
+            { votes: 50, libName: 'ReactVR' },
         ]
     }
     incrementVote = (library) => {
